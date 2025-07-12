@@ -56,7 +56,7 @@ h2 {
     color: #666;
 }
 
-.publication, .note {
+.publication, .note, .research {
     margin-bottom: 25px;
     padding-bottom: 20px;
     padding-left: 15px;
@@ -82,6 +82,17 @@ h2 {
 .note-description {
     font-size: 0.9rem;
     color: #666;
+}
+
+.research-title {
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.research-authors {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
 }
 
 .social-links {
@@ -133,4 +144,19 @@ h2 {
 .program-link {
     text-decoration: underline;
     color: black;
+}
+
+.research-paper-link {
+    color: #666;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-top: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.research-paper-link:hover {
+    color: #333;
 } 
