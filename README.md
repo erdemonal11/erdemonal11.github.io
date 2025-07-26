@@ -1,3 +1,3 @@
 # Personal Website
 
-This website is lower than 16 KB. 
+This site is under 16 KB, loads fast, and works offline. 
