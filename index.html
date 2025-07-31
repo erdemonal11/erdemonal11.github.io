@@ -66,36 +66,29 @@
         <h2>Notes</h2>
         <div class="note">
             <div class="note-title">Gradient Descent</div>
-            <div class="note-description">Gradient descent finds local minima by iteratively moving in the direction of steepest descent using xₙ₊₁ = xₙ - α∇f(xₙ), where α is the learning rate. The negative gradient -∇f(x) points toward the greatest decrease in function value. Learning rate selection balances convergence speed and stability: too small converges slowly, too large may overshoot or diverge. Common variants include batch (entire dataset), stochastic (single points), and mini-batch gradient descent.</div>
+            <div class="note-description">Gradient descent finds local minima by iteratively moving in the direction of steepest descent using the formula xₙ₊₁ = xₙ - α∇f(xₙ), where α is the learning rate. The negative gradient -∇f(x) points towards the greatest decrease in function value. Learning rate selection balances convergence speed and stability because too small a rate converges slowly, while too large a learning rate may cause overshooting or divergence.</div>
         </div>
         <div class="note">
             <div class="note-title">Hessian Matrix</div>
-            <div class="note-description">The Hessian matrix H describes local curvature of scalar functions f(x₁, x₂, ..., xₙ). It is an n×n matrix where entry (i,j) is ∂²f/∂xᵢ∂xⱼ. The matrix is symmetric when second derivatives are continuous. In optimization, the Hessian at critical points indicates: positive definite means local minimum, negative definite means local maximum, and indefinite means saddle point.</div>
+            <div class="note-description">The Hessian matrix H describes the local curvature of scalar functions f(x₁, x₂, ..., xₙ). It is an n×n matrix where the entry (i,j) is ∂²f/∂xᵢ∂xⱼ. The matrix is symmetric when the second derivatives are continuous. In optimization, the Hessian at critical points indicates whether the function has a local minimum (positive definite), a local maximum (negative definite), or a saddle point (indefinite).</div>
         </div>
         <div class="note">
             <div class="note-title">Jacobian Matrix</div>
-            <div class="note-description">The Jacobian matrix J is an m×n matrix of all first-order partial derivatives of a vector-valued function f: ℝⁿ → ℝᵐ. Entry (i,j) is ∂fᵢ/∂xⱼ.<br>The Jacobian represents the best linear approximation of the function near a given point. For square matrices, the Jacobian determinant enables change of variables in multiple integrals. When the determinant is non-zero at a point, the Inverse Function Theorem guarantees the function is locally invertible with a continuously differentiable inverse.</div>
+            <div class="note-description">The Jacobian matrix J is an m×n matrix of all partial derivatives of first degree of a vector function f: ℝⁿ → ℝᵐ. Its (i,j) element is ∂fᵢ/∂xⱼ. The Jacobian represents the best linear approximation of the function near a given point. For square matrices, the Jacobian determinant enables a change of variables in multiple integrals. When the determinant at a point is not zero, the Inverse Function Theorem states that the function is locally invertible with a continuously differentiable inverse.</div>
         </div>
         <div class="note">
-            <div class="note-title">K-Nearest Neighbors (KNN)</div>
-            <div class="note-description">K-Nearest Neighbors (KNN) is a lazy learning algorithm that makes predictions based on the K nearest neighbors to a query point. For classification, it uses majority vote among K neighbors; for regression, it averages K neighbor values.<br>The algorithm calculates distances (commonly Euclidean, Manhattan, or Minkowski) between the query point and all training points, then selects the K nearest neighbors. Choosing K involves a trade-off: small K is sensitive to noise, large K creates smoother boundaries but may underfit. Odd K values are preferred for binary classification to avoid ties.</div>
+            <div class="note-title">K-Nearest Neighbors</div>
+            <div class="note-description">K-Nearest Neighbors is a lazy learning algorithm that predicts based on the K nearest neighbors to a query point. It uses a majority vote for classification and averages neighbor values for regression. The algorithm calculates distances between the query and training points, then selects the K closest. Choosing K requires a compromise because a small K is sensitive to noise, while a large K produces more gradual boundaries but may underfit. Odd K values are preferred in binary classification to avoid ties.</div>
         </div>
         <div class="note">
             <div class="note-title">Lagrange Multipliers</div>
-            <div class="note-description">Lagrange multipliers solve constrained optimization problems min f(x) subject to g(x)=0 by forming the Lagrangian L(x,λ) = f(x) - λg(x). The solution requires setting all partial derivatives to zero, yielding ∇f(x) = λ∇g(x) and g(x) = 0.<br>Geometrically, at the optimal point, the gradient of the objective function is parallel to the gradient of the constraint, meaning contour lines of f(x) are tangent to the constraint curve. The multiplier λ represents the rate of change of the optimal value with respect to the constraint. For multiple constraints, the Lagrangian becomes L(x,λ₁,...,λₘ) = f(x) - Σλᵢgᵢ(x).</div>
+            <div class="note-description">Lagrange multipliers solve constrained optimization problems of minimizing f(x) subject to g(x)=0 by forming the Lagrangian L(x,λ)=f(x)−λg(x). The solution requires setting all partial derivatives to zero, giving ∇f(x)=λ∇g(x) and g(x)=0. The multiplier λ indicates how the optimal value changes with respect to the constraint.</div>
         </div>
         <div class="note">
             <div class="note-title">Newton-Raphson Method</div>
-            <div class="note-description">The Newton-Raphson method finds roots of f(x)=0 using the iterative formula xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ). Starting from initial guess x₀, each iteration uses the tangent line at the current point to approximate where the function crosses the x-axis.<br>The method converges when the initial guess is sufficiently close to the actual root, f'(x)≠0 near the root, and the function is smooth. Convergence criteria include |xₙ₊₁ - xₙ| &lt; ε or |f(xₙ)| &lt; ε, where ε is a small tolerance value.</div>
+            <div class="note-description">The Newton-Raphson method finds roots of the equation f(x)=0 using the iterative formula xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ). Starting from an initial guess x₀, each iteration uses the tangent line at the current point to approximate where the function crosses the x-axis. The method converges when the initial guess is sufficiently close to the root, f'(x)≠0 near the root, and the function is continuously differentiable. Common convergence criteria are |xₙ₊₁ - xₙ| < ε or |f(xₙ)| < ε, where ε is a small tolerance.</div>
         </div>
     </div>
 
-    <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(reg => console.log('Service Worker registered:', reg))
-    .catch(err => console.error('Service Worker registration failed:', err));
-}
-</script>
 </body>
 </html> 
