@@ -1,3 +1,3 @@
 # Personal Website
 
-This site is under 16 KB.
+This website is under 16 KB.
