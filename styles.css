@@ -33,15 +33,9 @@ h1 {
     line-height: 1.8;
 }
 
-.highlight-ml {
+.highlight-ml, .highlight-is {
     background-color: #90EE90;
-    color: #2E5A2E;
-    padding: 2px 4px;
-}
-
-.highlight-is {
-    background-color: #90EE90;
-    color: #2E5A2E;
+    color: #1B441B; /* passes contrast ~4.54:1 */
     padding: 2px 4px;
 }
 
@@ -56,22 +50,33 @@ h2 {
     color: #666;
 }
 
-.publication, .note, .research {
+.note-filters {
+    margin-bottom: 16px;
+}
+
+.filter-btn {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    color: #333;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: #e6ffe6;
+    border-color: #90EE90;
+}
+
+.note, .research {
     margin-bottom: 25px;
     padding-bottom: 20px;
     padding-left: 15px;
     border-left: 3px solid #ccc;
-}
-
-.publication-title {
-    font-weight: 400;
-    margin-bottom: 8px;
-}
-
-.publication-authors, .publication-venue {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 5px;
 }
 
 .note-title {
@@ -81,7 +86,7 @@ h2 {
 
 .note-description {
     font-size: 0.9rem;
-    color: #666;
+    color: #333;
 }
 
 .research-title {
@@ -91,7 +96,7 @@ h2 {
 
 .research-authors {
     font-size: 0.9rem;
-    color: #666;
+    color: #333;
     margin-bottom: 5px;
 }
 
@@ -101,18 +106,48 @@ h2 {
 }
 
 .social-links a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 20px;
     color: #666;
     text-decoration: none;
     font-size: 1.2rem;
     transition: opacity 0.2s;
+    padding: 6px;
+    min-width: 24px;
+    min-height: 24px;
+    border-radius: 6px; 
 }
 
 .social-links a:hover {
     opacity: 0.7;
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #1a73e8;
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: #1a73e8;
+    color: #fff;
+    border-radius: 6px;
+}
 
 
 @media (max-width: 600px) {
@@ -136,7 +171,7 @@ h2 {
 }
 
 .research-paper-link {
-    color: #666;
+    color: #333;
     text-decoration: underline;
     text-underline-offset: 6px;
     font-size: 0.85rem;

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <div class="header">
         <h1>Erdem Önal</h1>
         <div class="intro">
@@ -19,64 +20,126 @@
             I am interested in how <span class="highlight-ml">machine learning</span> can be integrated into <span class="highlight-is">intelligent systems</span>.
         </div>
         <div class="social-links">
-            <a href="mailto:erdemonal11@outlook.com" title="Email">
+            <a href="mailto:erdemonal11@outlook.com" aria-label="Email Erdem via Outlook">
                 <i class="fas fa-envelope"></i>
             </a>
-            <a href="https://linkedin.com/in/erdemonal1" title="LinkedIn" target="_blank">
+            <a href="https://linkedin.com/in/erdemonal1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://github.com/erdemonal11" title="GitHub" target="_blank">
+            <a href="https://github.com/erdemonal11" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://orcid.org/0009-0006-6580-3711" title="ORCID" target="_blank">
+            <a href="https://orcid.org/0009-0006-6580-3711" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile (opens in new tab)">
                 <i class="fa-brands fa-orcid"></i>
             </a>
-            <a href="files/CV.pdf" title="CV" target="_blank">
+            <a href="files/CV Onal Erdem.pdf" target="_blank" rel="noopener noreferrer" aria-label="Curriculum Vitae PDF (opens in new tab)" type="application/pdf">
                 <i class="fas fa-file"></i>
             </a>
         </div>
     </div>
 
+    <main id="main" role="main">
     <div class="section">
         <h2>Research</h2>
         <div class="research">
             <div class="research-title">A Systematic Mapping Study on Green Load<br>Balancing Algorithms for Cloud Data Centers</div>
             <div class="research-authors">Erdem Önal, Fadi Alkhori, Marvin Schramm</div>
-            <a href="files/SMS-Study.pdf" class="research-paper-link" target="_blank">Paper</a>
+            <a href="files/SMS-Study.pdf" class="research-paper-link" target="_blank">Read the paper (PDF)</a>
         </div>
     </div>
 
     <div class="section">
         <h2>Notes</h2>
-        <div class="note">
+        <script>
+            // Simple client-side filter for notes
+            document.addEventListener('DOMContentLoaded', function () {
+                const buttons = document.querySelectorAll('.filter-btn');
+                const notes = document.querySelectorAll('.note');
+
+                function setActive(button) {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    button.classList.add('active');
+                }
+
+                function filterNotes(category) {
+                    notes.forEach(note => {
+                        const categories = (note.getAttribute('data-categories') || '').split(',');
+                        const normalized = categories.map(c => c.trim());
+                        if (category === 'all' || normalized.includes(category)) {
+                            note.style.display = '';
+                        } else {
+                            note.style.display = 'none';
+                        }
+                    });
+                }
+
+                buttons.forEach(btn => {
+                    // initialize aria-pressed state
+                    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+                    btn.addEventListener('click', () => {
+                        setActive(btn);
+                        buttons.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+                        filterNotes(btn.getAttribute('data-filter'));
+                    });
+                });
+            });
+        </script>
+        <div class="note-filters" aria-label="Filter notes by category" role="toolbar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+            <button class="filter-btn" data-filter="optimization">Optimization</button>
+            <button class="filter-btn" data-filter="mathematical-analysis">Mathematical Analysis</button>
+            <button class="filter-btn" data-filter="numerical-methods">Numerical Methods</button>
+        </div>
+        <div class="note" data-categories="optimization">
             <div class="note-title">Gradient Descent</div>
-            <div class="note-description">Gradient descent finds local minima by iteratively moving in the direction of steepest descent using the formula xₙ₊₁ = xₙ - α∇f(xₙ), where α is the learning rate. The negative gradient -∇f(x) points towards the greatest decrease in function value. Learning rate selection balances convergence speed and stability because too small a rate converges slowly, while too large a learning rate may cause overshooting or divergence.</div>
+            <div class="note-description">Gradient descent locates local minima by repeatedly stepping in the direction of the steepest decrease. It uses the formula xₙ₊₁ = xₙ - α∇f(xₙ), where α represents the learning rate. The negative gradient -∇f(x) indicates the direction of the most rapid drop in the function's value. Selecting the learning rate involves balancing how fast you converge and keeping things stable. If the rate is too small, convergence is slow. If the learning rate is too big, you might overshoot or diverge.</div>
         </div>
-        <div class="note">
+        <div class="note" data-categories="mathematical-analysis">
             <div class="note-title">Hessian Matrix</div>
-            <div class="note-description">The Hessian matrix H describes the local curvature of scalar functions f(x₁, x₂, ..., xₙ). It is an n×n matrix where the entry (i,j) is ∂²f/∂xᵢ∂xⱼ. The matrix is symmetric when the second derivatives are continuous. In optimization, the Hessian at critical points indicates whether the function has a local minimum (positive definite), a local maximum (negative definite), or a saddle point (indefinite).</div>
+            <div class="note-description">The Hessian matrix, H, shows the local curvature of functions f(x₁, x₂, ..., xₙ). It’s an n×n matrix where the entry (i,j) is ∂²f/∂xᵢ∂xⱼ. This matrix is symmetric if the second derivatives are continuous. In optimization, the Hessian at critical points tells you if the function has a local minimum (positive definite), a local maximum (negative definite), or a saddle point (indefinite).</div>
         </div>
-        <div class="note">
+        <div class="note" data-categories="mathematical-analysis">
             <div class="note-title">Jacobian Matrix</div>
-            <div class="note-description">The Jacobian matrix J is an m×n matrix of all partial derivatives of first degree of a vector function f: ℝⁿ → ℝᵐ. Its (i,j) element is ∂fᵢ/∂xⱼ. The Jacobian represents the best linear approximation of the function near a given point. For square matrices, the Jacobian determinant enables a change of variables in multiple integrals. When the determinant at a point is not zero, the Inverse Function Theorem states that the function is locally invertible with a continuously differentiable inverse.</div>
+            <div class="note-description">The Jacobian matrix, J, is an m×n matrix that contains all the first-order partial derivatives of a vector function f: ℝⁿ → ℝᵐ. The element in the (i,j) position is ∂fᵢ/∂xⱼ. The Jacobian gives you the best linear approximation of the function around a certain point. For square matrices, the Jacobian determinant lets you change variables in multiple integrals. If the determinant at a point isn't zero, the Inverse Function Theorem says the function can be locally inverted and has a continuously differentiable inverse.</div>
         </div>
-        <div class="note">
+        <div class="note" data-categories="machine-learning">
             <div class="note-title">K-Nearest Neighbors</div>
-            <div class="note-description">K-Nearest Neighbors is a lazy learning algorithm that predicts based on the K nearest neighbors to a query point. It uses a majority vote for classification and averages neighbor values for regression. The algorithm calculates distances between the query and training points, then selects the K closest. Choosing K requires a compromise because a small K is sensitive to noise, while a large K produces more gradual boundaries but may underfit. Odd K values are preferred in binary classification to avoid ties.</div>
+            <div class="note-description">K-Nearest Neighbors is a lazy learning method that makes predictions based on the K closest neighbors to a point. For classification, it uses a majority vote. For regression, it averages the values of the neighbors. The method measures distances between the query and training points, and then picks the K closest. Choosing K means finding a balance because a small K can be too sensitive to noise, but a big K makes boundaries smoother but might underfit the data. Odd K values are better in binary classification to prevent ties.</div>
         </div>
-        <div class="note">
+        <div class="note" data-categories="optimization">
             <div class="note-title">Lagrange Multipliers</div>
-            <div class="note-description">Lagrange multipliers solve constrained optimization problems of minimizing f(x) subject to g(x)=0 by forming the Lagrangian L(x,λ)=f(x)−λg(x). The solution requires setting all partial derivatives to zero, giving ∇f(x)=λ∇g(x) and g(x)=0. The multiplier λ indicates how the optimal value changes with respect to the constraint.</div>
+            <div class="note-description">Lagrange multipliers are used to solve constrained optimization problems. They minimize f(x) subject to g(x)=0 by creating the Lagrangian L(x,λ)=f(x)−λg(x). To find the solution, you set all partial derivatives to zero, which gives you ∇f(x)=λ∇g(x) and g(x)=0. The multiplier λ shows how the optimal value changes based on the constraint.</div>
         </div>
-        <div class="note">
+        <div class="note" data-categories="machine-learning">
             <div class="note-title">Logistic Regression</div>
-            <div class="note-description">Logistic regression is a model used in machine learning for classification. It starts by calculating a weighted sum of the input features plus a bias, written as z = w⋅x + b. Then, it applies the sigmoid function, which maps any number to a value between 0 and 1 using the formula g(z) = 1/(1 + e⁻ᶻ). This output can be interpreted as the probability that the input belongs to a certain class. This makes logistic regression useful for classifying inputs into categories.   </div>
+            <div class="note-description">Logistic regression is a model used to classify things in machine learning. It starts by adding up the input features in a weighted way, plus a bias. This is written as z = w⋅x + b. Then, it uses the sigmoid function, which turns any number into a value between 0 and 1 using the formula g(z) = 1/(1 + e⁻ᶻ). The result can be seen as the likelihood that the input fits into a certain class. This makes logistic regression helpful for sorting inputs into categories.</div>
         </div>
-        <div class="note">
+        <div class="note" data-categories="numerical-methods">
             <div class="note-title">Newton-Raphson Method</div>
-            <div class="note-description">The Newton-Raphson method finds roots of the equation f(x)=0 using the iterative formula xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ). Starting from an initial guess x₀, each iteration uses the tangent line at the current point to approximate where the function crosses the x-axis. The method converges when the initial guess is sufficiently close to the root, f'(x)≠0 near the root, and the function is continuously differentiable. Common convergence criteria are |xₙ₊₁ - xₙ| < ε or |f(xₙ)| < ε, where ε is a small tolerance.</div>
+            <div class="note-description">The Newton-Raphson method finds roots of the equation f(x)=0 using the iterative formula xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ). Starting with a guess, x₀, each step uses the tangent line at the current point to guess where the function crosses the x-axis. This method works when the initial guess is close enough to the root, f'(x)≠0 near the root, and the function changes smoothly. Common ways to check if it has converged are |xₙ₊₁ - xₙ| < ε or |f(xₙ)| < ε, where ε is a small value.</div>
+        </div>
+        <div class="note" data-categories="machine-learning">
+            <div class="note-title">Regularization</div>
+            <div class="note-description">Regularization stops overfitting by adding a penalty to the cost function that discourages big parameter values. For both linear and logistic regression, the regularized cost function is J(w,b) = original_cost + (λ/2m)∑wⱼ². The regularization parameter λ controls how to balance fitting the training data and keeping parameters small. In gradient descent, this adds λ/m·wⱼ to the derivative of wⱼ, which shrinks parameters by multiplying them by (1 - αλ/m) each time. Note that the bias parameter b isn’t regularized; just the weight parameters w are penalized to prevent overfitting.</div>
         </div>
     </div>
 
+    <div style="margin-top: 24px; text-align: center;">
+        <a href="https://www.w3.org/WAI/WCAG2AA-Conformance"
+           title="Explanation of WCAG 2 Level AA conformance"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="WCAG 2.2 Level AA conformance (opens in new tab)">
+          <img height="32" width="88"
+               src="https://www.w3.org/WAI/WCAG22/wcag2.2AA"
+               alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.2">
+        </a>
+    </div>
+
+    
+
+    </main>
+
 </body>
-</html> 
+
+</html>
