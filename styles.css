@@ -35,7 +35,7 @@ h1 {
 
 .highlight-ml, .highlight-is {
     background-color: #90EE90;
-    color: #1B441B; /* passes contrast ~4.54:1 */
+    color: #1B441B;
     padding: 2px 4px;
 }
 
@@ -79,7 +79,7 @@ h2 {
     border-left: 3px solid #ccc;
 }
 
-.note-title {
+.note-title, .research-title {
     font-weight: 400;
     margin-bottom: 8px;
 }
@@ -87,11 +87,6 @@ h2 {
 .note-description {
     font-size: 0.9rem;
     color: #333;
-}
-
-.research-title {
-    font-weight: 400;
-    margin-bottom: 8px;
 }
 
 .research-authors {
@@ -149,6 +144,24 @@ button:focus-visible {
     border-radius: 6px;
 }
 
+.program-link {
+    text-decoration: underline;
+    color: black;
+}
+
+.research-paper-link {
+    color: #333;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.research-paper-link:hover {
+    color: #333;
+} 
 
 @media (max-width: 600px) {
     body {
@@ -164,23 +177,3 @@ button:focus-visible {
         font-size: 1.1rem;
     }
 }
-
-.program-link {
-    text-decoration: underline;
-    color: black;
-}
-
-.research-paper-link {
-    color: #333;
-    text-decoration: underline;
-    text-underline-offset: 6px;
-    font-size: 0.85rem;
-    display: inline-block;
-    margin-top: 4px;
-    position: relative;
-    cursor: pointer;
-}
-
-.research-paper-link:hover {
-    color: #333;
-} 

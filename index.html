@@ -13,7 +13,7 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
-    <div class="header">
+    <header class="header" role="banner">
         <h1>Erdem Önal</h1>
         <div class="intro">
             I am a first year MSc student in <a href="https://www.mines-stetienne.fr/formation/cyber-physical-social-systems-cps2/" class="program-link" target="_blank">Computer Science (CPS2: AI and IoT)</a> at Jean Monnet University and École des Mines de Saint-Étienne.<br><br>
@@ -36,7 +36,7 @@
                 <i class="fas fa-file"></i>
             </a>
         </div>
-    </div>
+    </header>
 
     <main id="main" role="main">
     <div class="section">
@@ -51,7 +51,6 @@
     <div class="section">
         <h2>Notes</h2>
         <script>
-            // Simple client-side filter for notes
             document.addEventListener('DOMContentLoaded', function () {
                 const buttons = document.querySelectorAll('.filter-btn');
                 const notes = document.querySelectorAll('.note');
