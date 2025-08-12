@@ -13,7 +13,7 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
+    <header class="header">
         <h1>Erdem Önal</h1>
         <div class="intro">
             I am a first year MSc student in <a href="https://www.mines-stetienne.fr/formation/cyber-physical-social-systems-cps2/" class="program-link" target="_blank" rel="noopener noreferrer" aria-label="Computer Science CPS2 AI and IoT program (opens in new tab)">Computer Science (CPS2: AI and IoT)</a> at Jean Monnet University and École des Mines de Saint-Étienne.<br><br>
@@ -32,13 +32,13 @@
             <a href="https://orcid.org/0009-0006-6580-3711" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile (opens in new tab)">
                 <i class="fa-brands fa-orcid" aria-hidden="true" title="ORCID"></i>
             </a>
-            <a href="files/CV Onal Erdem.pdf" target="_blank" rel="noopener noreferrer" aria-label="Curriculum Vitae PDF (opens in new tab)" type="application/pdf">
+            <a href="files/CV_Onal_Erdem.pdf" target="_blank" rel="noopener noreferrer" aria-label="Curriculum Vitae PDF (opens in new tab)" type="application/pdf">
                 <i class="fas fa-file" aria-hidden="true" title="CV (PDF)"></i>
             </a>
         </div>
     </header>
 
-    <main id="main" role="main">
+    <main id="main">
     <div class="section">
         <h2>Publications</h2>
         <div class="research">
@@ -83,7 +83,6 @@
                 }
 
                 buttons.forEach(btn => {
-                    // initialize aria-pressed state
                     btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
                     btn.addEventListener('click', () => {
                         setActive(btn);
@@ -126,7 +125,7 @@
         </div>
         <div class="note" data-categories="numerical-methods">
             <div class="note-title">Newton-Raphson Method</div>
-            <div class="note-description">The Newton-Raphson method finds roots of the equation f(x)=0 using the iterative formula xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ). Starting with a guess, x₀, each step uses the tangent line at the current point to guess where the function crosses the x-axis. This method works when the initial guess is close enough to the root, f'(x)≠0 near the root, and the function changes smoothly. Common ways to check if it has converged are |xₙ₊₁ - xₙ| < ε or |f(xₙ)| < ε, where ε is a small value.</div>
+            <div class="note-description">The Newton-Raphson method finds roots of the equation f(x)=0 using the iterative formula xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ). Starting with a guess, x₀, each step uses the tangent line at the current point to guess where the function crosses the x-axis. This method works when the initial guess is close enough to the root, f'(x)≠0 near the root, and the function changes smoothly. Common ways to check if it have converged are |xₙ₊₁ - xₙ| &lt; ε or |f(xₙ)| &lt; ε, where ε is a small value.</div>
         </div>
         <div class="note" data-categories="machine-learning">
             <div class="note-title">Regularization</div>
@@ -144,6 +143,7 @@
                alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.2">
         </a>
     </div>
+    
 
     
 
