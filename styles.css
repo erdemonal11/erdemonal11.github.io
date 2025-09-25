@@ -1,7 +1,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:white;color:black;line-height:1.6;max-width:800px;margin:0 auto;padding:40px 20px}
+body{font-family:'__copernicus_669e4a','__copernicus_Fallback_669e4a',Georgia,'Times New Roman',serif;background:white;color:black;line-height:1.6;max-width:800px;margin:0 auto;padding:40px 20px}
 .header{margin-bottom:60px}
 h1{font-size:2rem;font-weight:400;margin:20px 0}
+.name-highlight{background:black;color:white;padding:2px 6px;border-radius:6px;font-size:2.2rem}
 h2{font-size:1.5rem;font-weight:400;margin-bottom:20px;color:#666}
 .intro{font-size:1.1rem;font-weight:300;margin-bottom:40px;color:#333;line-height:1.8}
 .highlight-ml,.highlight-is{background:#90EE90;color:#1B441B;padding:2px 4px}
