@@ -2,7 +2,7 @@
 body{font-family:'__copernicus_669e4a','__copernicus_Fallback_669e4a',Georgia,'Times New Roman',serif;background:white;color:black;line-height:1.6;max-width:800px;margin:0 auto;padding:40px 20px}
 .header{margin-bottom:60px}
 h1{font-size:2rem;font-weight:400;margin:20px 0}
-.name-highlight{background:black;color:white;padding:2px 6px;border-radius:6px;font-size:2.2rem}
+.name-highlight{background:black;color:white;padding:2px 6px;border-radius:6px;font-size:2.8rem}
 h2{font-size:1.5rem;font-weight:400;margin-bottom:20px;color:#666}
 .intro{font-size:1.1rem;font-weight:300;margin-bottom:40px;color:#333;line-height:1.8}
 .highlight-ml,.highlight-is{background:#90EE90;color:#1B441B;padding:2px 4px}
@@ -13,7 +13,8 @@ h2{font-size:1.5rem;font-weight:400;margin-bottom:20px;color:#666}
 .research-venue{font-size:0.85rem;color:#666;font-style:italic;margin-bottom:8px}
 .filter-btn{display:inline-block;margin:0 8px 8px 0;font-size:0.85rem;padding:6px 10px;border:1px solid #ccc;background:#f8f8f8;color:#333;border-radius:6px;cursor:pointer}
 .filter-btn.active{background:#e6ffe6;border-color:#90EE90}
-.note,.research{margin-bottom:25px;padding:0 0 20px 15px;border-left:3px solid #ccc}
+.note,.research{margin-bottom:25px;padding:0 0 20px 15px;border-left:3px solid #ccc;transition:border-left-color 0.3s ease}
+.note:hover,.research:hover{border-left-color:#90EE90}
 .research-title{font-weight:400;margin-bottom:8px}
 .research-authors{font-size:0.9rem;color:#333;margin-bottom:5px}
 .social-links{margin-top:20px;text-align:center}
