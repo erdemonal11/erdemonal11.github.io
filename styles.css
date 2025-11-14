@@ -19,7 +19,7 @@ h2{font-size:1.5rem;font-weight:400;margin-bottom:20px;color:var(--text-primary)
 .research-title{font-weight:400;margin-bottom:8px}
 .research-authors{font-size:0.9rem;color:var(--text-primary);margin-bottom:5px}
 .research-interests{margin-top:20px;text-align:center}
-.research-interests-image{max-width:100%;height:auto;display:block;margin:0 auto 12px;border-radius:4px}
+.research-interests-image{max-width:100%;height:auto;display:block;margin:0 auto 12px}
 .research-interests-caption{font-size:0.9rem;color:var(--text-muted);font-style:italic;margin-top:8px}
 .social-icons{margin-top:20px;text-align:center}
 .social-icons a{display:inline-flex;align-items:center;justify-content:center;margin-right:20px;color:var(--text-secondary);text-decoration:none;font-size:1.2rem;padding:6px;min-width:24px;min-height:24px;border-radius:6px}
