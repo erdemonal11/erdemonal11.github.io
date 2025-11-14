@@ -33,6 +33,6 @@ a:not(.badge-group a):not(.social-icons a):hover{background:#e8e8e8}
 .badge-group a{transition:opacity 0.3s ease;display:block;background:none;padding:0;border-radius:0;font-style:normal;line-height:0}
 .badge-group a:hover{opacity:0.8}
 .badge-group img{height:32px;width:auto;display:block}
-.carbonbadge{height:32px;display:block;line-height:0}
-.carbonbadge iframe{height:32px!important;border:none;display:block}
+.carbonbadge{display:inline-flex;align-items:center;justify-content:center;min-height:32px;line-height:1.2}
+.carbonbadge iframe{height:auto!important;border:none;display:block}
 @media (max-width:600px){body{padding:20px 15px}h1{font-size:2rem}.social-icons a{margin-right:15px;font-size:1.1rem}.badges-container{gap:15px;margin-top:25px}}
