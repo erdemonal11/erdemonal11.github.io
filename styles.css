@@ -20,9 +20,10 @@ h2{font-size:1.5rem;font-weight:400;margin-bottom:20px;color:var(--text-primary)
 .research-authors{font-size:0.9rem;color:var(--text-primary);margin-bottom:5px}
 .research-interests{margin-top:20px;text-align:center}
 .research-interests-image{max-width:100%;height:auto;display:block;margin:0 auto 12px}
-.research-interests-caption{font-size:0.9rem;color:var(--text-muted);font-style:italic;margin-top:8px}
+.research-interests-caption{font-size:0.9rem;color:var(--text-muted);font-style:italic;margin-top:8px;margin-bottom:0}
 .social-icons{margin-top:20px;text-align:center}
-.social-icons a{display:inline-flex;align-items:center;justify-content:center;margin-right:20px;color:var(--text-secondary);text-decoration:none;font-size:1.2rem;padding:6px;min-width:24px;min-height:24px;border-radius:6px}
+.social-icons a{display:inline-flex;align-items:center;justify-content:center;margin-right:20px;color:var(--text-secondary);text-decoration:none;padding:6px;min-width:24px;min-height:24px;border-radius:6px}
+.social-icons a svg{width:20px;height:20px;flex-shrink:0}
 .social-icons a:hover{opacity:0.7}
 a:focus-visible,button:focus-visible{outline:3px solid #1a73e8;outline-offset:2px}
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
@@ -36,6 +37,5 @@ a:not(.badge-group a):not(.social-icons a):hover{background:#e8e8e8}
 .badge-group a{transition:opacity 0.3s ease;display:block;background:none;padding:0;border-radius:0;font-style:normal;line-height:0}
 .badge-group a:hover{opacity:0.8}
 .badge-group img{height:32px;width:auto;display:block}
-.carbonbadge{text-align:center}
-.carbonbadge iframe{height:auto!important;border:none;display:block}
+#ecoindex-badge{display:flex;justify-content:center;align-items:center}
 @media (max-width:600px){body{padding:20px 15px}h1{font-size:2rem}.social-icons a{margin-right:15px;font-size:1.1rem}.badges-container{gap:15px;margin-top:25px}}
